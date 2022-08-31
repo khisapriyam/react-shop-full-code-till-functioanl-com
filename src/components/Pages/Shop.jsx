@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import product from '../../_assets/images/shop/1.jpg'
 import Sidebar from '../Partials/Sidebar'
 
-const Shop = ({ products }) => {
+const Shop = ({ products, setProducts, cats, tags}) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const Shop = ({ products }) => {
           <div className="row">
             <div className="col-md-3 hidden-sm hidden-xs">
 
-              <Sidebar></Sidebar>
+              <Sidebar setProducts={setProducts} cats={ cats } tags={tags} ></Sidebar>
               
             </div>
             <div className="col-md-9">

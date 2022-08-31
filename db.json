@@ -25,18 +25,6 @@
       "id": 3
     },
     {
-      "name": "hanlf pant old",
-      "slug": "hanlf-pant-old",
-      "regular_price": "100",
-      "sale_price": "99",
-      "desc": "browin half pant",
-      "rating": "5",
-      "categoryId": "8",
-      "tagId": "7",
-      "photo": "https://4.imimg.com/data4/II/CU/MY-19319311/half-pant-500x500.jpg",
-      "id": 4
-    },
-    {
       "name": "test 1",
       "slug": "test-1",
       "regular_price": "200",
@@ -103,11 +91,6 @@
       "id": 6,
       "name": "song manse",
       "slug": "song-manse"
-    },
-    {
-      "id": 7,
-      "name": "Ler khao bajare jao",
-      "slug": "ler-khao-bajare-jao"
     },
     {
       "id": 8,

@@ -1,33 +1,92 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import product from '../../_assets/images/shop/1.jpg'
 
-const Sidebar = () => {
+const Sidebar = ({ setProducts, cats, tags}) => {
+
+    const [search, setSearch] = useState('');
+
+
+    //product search by category
+
+    const handleCatSearch = (e, id) => {
+        e.preventDefault();
+        setSearch('')
+        //alert(id)
+
+        if( id !== ''){
+            axios.get(`http://localhost:5050/category/${id}/products`).then(res => {
+                setProducts(res.data)
+            
+            });
+
+        }   
+        
+    };
+    //tag search
+    const handleTagSearch = (e, id) => {
+        e.preventDefault()
+        setSearch('')
+
+        if( id !== ''){
+            axios.get(`http://localhost:5050/tags/${id}/products`).then(res => {
+                setProducts(res.data)
+                
+            });
+
+        } 
+    }
+
+    useEffect(() => {
+        if( search !== ''){
+            axios.get(`http://localhost:5050/products?q=${ search }`).then(res => {
+                setProducts(res.data)
+
+            },[]);
+        }
+        
+    });
+
+
   return (
     <>
         <div className="sidebar">
             <div className="widget">
                 <h6 className="upper">Search Shop</h6>
                 <form>
-                    <input type="text" placeholder="Search.." className="form-control"/>
+                    <input type="text" placeholder="Search.." value={search} onChange={ e=> setSearch(e.target.value)} className="form-control"/>
                 </form>
                 </div>
             <div className="widget">
                 <h6 className="upper">Categories</h6>
                 <ul className="nav">
-                <li><a href="#">Beauty</a>
-                </li>
-                <li><a href="#">Blazers</a>
-                </li>
-                <li><a href="#">Bags</a>
-                </li>
-                <li><a href="#">Jeans</a>
-                </li>
-                <li><a href="#">Shorts</a>
-                </li>
-                <li><a href="#">Dresses</a>
-                </li>
+
+                    {
+                        cats.map(data => 
+                            <li>
+                                <a onClick={ (e) => handleCatSearch(e, data.id) }href={ data.id }>{ data.name}</a>
+                            </li>
+                        )
+                    }
+                
+                
                 </ul>
             </div>
+
+            <div className="widget">
+                <h6 className="upper">Popular Tags</h6>
+                <div className="tags clearfix">
+
+                    {
+                        tags.map(data => 
+                            <a onClick={ e => handleTagSearch( e, data.id)} href= "">{data.name}</a>
+                        )
+                    }
+                    
+                    
+                </div>
+            </div>
+            
             
             <div className="widget">
                 <h6 className="upper">Trending Products</h6>
@@ -50,13 +109,7 @@ const Sidebar = () => {
                 </ul>
             </div>
             
-            
-            
-            <div className="widget">
-                <h6 className="upper">Popular Tags</h6>
-                <div className="tags clearfix"><a href="#">Hipster</a><a href="#">Fashion</a><a href="#">Shirt</a><a href="#">Modern</a><a href="#">Vintage</a>
-                </div>
-            </div>
+
             
         </div>
     </>

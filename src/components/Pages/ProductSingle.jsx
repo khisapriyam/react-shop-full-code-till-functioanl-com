@@ -7,7 +7,7 @@ import single3 from '../../_assets/images/shop/single-3.jpg'
 import single4 from '../../_assets/images/shop/single-4.jpg'
 import Rating from './Rating'
 
-const ProductSingle = () => {
+const ProductSingle = ({ cat_name }) => {
 
     const { slug } = useParams();
 
@@ -97,12 +97,13 @@ const ProductSingle = () => {
                             <input type="number" placeholder="QTY" value="1" min="1" className="form-control" /><span className="input-group-btn"><button type="button" className="btn btn-color">Add to Cart<i className="ti-bag"></i></button></span>
                         </div>
                         </form>
+                        {/* { cat_name(product.categoryId)} */}
                     </div>
                     <div className="single-product-list">
                         <ul>
                         <li><span>Sizes:</span> S, M, L, XL</li>
                         <li><span>Colors:</span> Blue, Red, Grey</li>
-                        <li><span>Category:</span><a href="#">Blazers</a>
+                        <li><span>Category:</span><a href="#">{cat_name(product.categoryId)}</a>
                         </li>
                         <li><span>Tags:</span><a href="#">Outfit</a>-<a href="#">Jeans</a>
                         </li>

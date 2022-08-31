@@ -31,6 +31,16 @@ function App() {
     //state for showing products
     const[products, setProducts] = useState([]);
 
+    //find cat
+    const cat_name = (id) => {
+
+      let cat = cats.find((data) => data.id == id);
+      
+      return cat.name;
+  
+
+    }
+
     //making slug
     const makeSlug = (data) => {
       let arr = data.split(' ');
@@ -43,14 +53,24 @@ function App() {
       axios.get('http://localhost:5050/tags').then(res => {
         setTags(res.data.reverse())
       })
+
+    },[])
+
+    useEffect(() => {
+      
       axios.get('http://localhost:5050/category').then( res => {
         setCats(res.data)
       })
+      
+    },[])
+
+    useEffect(() => {
+      
       axios.get('http://localhost:5050/products').then( res => {
         setProducts(res.data)
       })
 
-    },[tags, cats, products])
+    },[])
 
   return (
     <>
@@ -58,8 +78,8 @@ function App() {
         <Header/>
           <Routes>
             <Route path="/" element={ <Home />}/>
-            <Route path="/shop" element={ <Shop products={ products }/>}/>
-            <Route path="/shop/:slug" element={ <ProductSingle />}/>
+            <Route path="/shop" element={ <Shop products={ products } setProducts={setProducts} cats={cats} tags={tags} />}/>
+            <Route path="/shop/:slug" element={ <ProductSingle cat_name={ cat_name }/>}/>
             <Route path="/admin" element={ <Dashboard />} >
               <Route path="/admin/dash" element={ <Dash/>}/>
               <Route path="/admin/products" element={ <Products products={ products }/>}/>
