@@ -107,6 +107,9 @@ const Header = () => {
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li>
+                        <Link to ="/admin">Admin</Link>
+                    </li>
                 </ul>
                 
                 </div>

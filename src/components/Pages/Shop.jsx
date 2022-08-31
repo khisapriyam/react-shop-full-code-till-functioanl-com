@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import product from '../../_assets/images/shop/1.jpg'
 import Sidebar from '../Partials/Sidebar'
 
-const Shop = () => {
+const Shop = ({ products }) => {
 
   return (
     <>
@@ -19,63 +19,39 @@ const Shop = () => {
               
               <div className="container-fluid">
                 <div className="row">
+                  {
+                    products.map( data => 
+                        <div className="col-md-4 col-sm-6">
+                          <div className="shop-product">
+                            <div className="product-thumb">
+                              <Link to={`/shop/${ data.slug }`}>
+                                <img style={{ width:'100%',height:'300px', objectFit:'cover'}}src= {data.photo} alt="" />
+                              </Link>
+                              <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
+                              </div>
+                            </div>
+                            <div className="product-info">
+                              <h4 className="upper"><a href="#">{data.name}</a></h4>
 
-
-                  <div className="col-md-4 col-sm-6">
-                    <div className="shop-product">
-                      <div className="product-thumb">
-                        <Link to="/shop/alo">
-                          <img src= {product} alt="" />
-                        </Link>
-                        <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
+                              {
+                                data.sale_price === '' ?  <span>${data.regular_price}</span> : 
+                                <>
+                                  <span style={{ textDecoration: ' line-through', display:'inline-block', marginRight: '10px'}}>${data.regular_price}</span>
+                                  <span style={{ color: 'red'}}>${data.sale_price}</span>
+                                </>
+                              }
+                              
+                              
+                              <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="product-info">
-                        <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="col-md-4 col-sm-6">
-                    <div className="shop-product">
-                      <div className="product-thumb">
-                        <a href="#">
-                          <img src= {product} alt="" />
-                        </a>
-                        <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                        </div>
-                      </div>
-                      <div className="product-info">
-                        <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                      )
+                  }
 
 
-                  <div className="col-md-4 col-sm-6">
-                    <div className="shop-product">
-                      <div className="product-thumb">
-                        <a href="#">
-                          <img src= {product} alt="" />
-                        </a>
-                        <div className="product-overlay"><a href="#" className="btn btn-color-out btn-sm">Add To Cart<i className="ti-bag"></i></a>
-                        </div>
-                      </div>
-                      <div className="product-info">
-                        <h4 className="upper"><a href="#">Premium Notch Blazer</a></h4><span>$79.99</span>
-                        <div className="save-product"><a href="#"><i className="icon-heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                  
                 <ul className="pagination">
                   <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i className="ti-arrow-left"></i></span></a>
                   </li>

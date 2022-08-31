@@ -1,0 +1,123 @@
+{
+  "products": [
+    {
+      "name": "bluw tshirt",
+      "slug": "bluw-tshirt",
+      "regular_price": "200",
+      "sale_price": "100",
+      "desc": "good",
+      "rating": "3",
+      "categoryId": "7",
+      "tagId": "8",
+      "photo": "https://www.tezenis.com/dw/image/v2/BCXQ_PRD/on/demandware.static/-/Sites-TEZ_EC_COM/default/dw91e5b692/images/2MM15C9120-DT1W.jpg?sw=600&sfrm=jpeg",
+      "id": 2
+    },
+    {
+      "name": "full pant",
+      "slug": "full-pant",
+      "regular_price": "300",
+      "sale_price": "250",
+      "desc": "not bad",
+      "rating": "1",
+      "categoryId": "9",
+      "tagId": "5",
+      "photo": "data:image/jpeg;base64,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",
+      "id": 3
+    },
+    {
+      "name": "hanlf pant old",
+      "slug": "hanlf-pant-old",
+      "regular_price": "100",
+      "sale_price": "99",
+      "desc": "browin half pant",
+      "rating": "5",
+      "categoryId": "8",
+      "tagId": "7",
+      "photo": "https://4.imimg.com/data4/II/CU/MY-19319311/half-pant-500x500.jpg",
+      "id": 4
+    },
+    {
+      "name": "test 1",
+      "slug": "test-1",
+      "regular_price": "200",
+      "sale_price": "111",
+      "desc": "fasdf",
+      "rating": "fsad",
+      "categoryId": "6",
+      "tagId": "8",
+      "photo": "https://4.imimg.com/data4/II/CU/MY-19319311/half-pant-500x500.jpg",
+      "id": 5
+    },
+    {
+      "name": "test 2",
+      "slug": "test-2",
+      "regular_price": "2000",
+      "sale_price": "",
+      "desc": "fsda",
+      "rating": "fsda",
+      "categoryId": "7",
+      "tagId": "8",
+      "photo": "https://4.imimg.com/data4/II/CU/MY-19319311/half-pant-500x500.jpg",
+      "id": 6
+    }
+  ],
+  "category": [
+    {
+      "id": 6,
+      "name": "gales",
+      "slug": "gales"
+    },
+    {
+      "id": 7,
+      "name": "song minguk",
+      "slug": "song-minguk"
+    },
+    {
+      "id": 8,
+      "name": "tor maire baap",
+      "slug": "tor-maire-baap"
+    },
+    {
+      "id": 9,
+      "name": "song manse",
+      "slug": "song-manse"
+    },
+    {
+      "id": 10,
+      "name": "torres",
+      "slug": "torres"
+    },
+    {
+      "id": 11,
+      "name": "saree dami",
+      "slug": "saree-dami"
+    }
+  ],
+  "tags": [
+    {
+      "id": 5,
+      "name": "Soun istagram",
+      "slug": "soun-istagram"
+    },
+    {
+      "id": 6,
+      "name": "song manse",
+      "slug": "song-manse"
+    },
+    {
+      "id": 7,
+      "name": "Ler khao bajare jao",
+      "slug": "ler-khao-bajare-jao"
+    },
+    {
+      "id": 8,
+      "name": "song daehan",
+      "slug": "song-daehan"
+    },
+    {
+      "id": 9,
+      "name": "keya payel",
+      "slug": "keya-payel"
+    }
+  ]
+}
